@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Tune these
     const SAFE_RADIUS = 60;      // how close the mouse can get before it runs
-    const STEP = 50;            // how far it tries to move each time
-    const MAX_STEP = 10;        // cap the jump so it doesn't teleport too far
+    const STEP = 35;            // how far it tries to move each time
+    const MAX_STEP = 80;
 
     // Smoothness
     leaveBtn.style.willChange = "transform";
@@ -96,7 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const panic = clamp((SAFE_RADIUS - dist) / SAFE_RADIUS, 0, 1);
 
       // Compute step distance
-      const step = clamp(STEP * (0.6 + panic), 60, MAX_STEP);
+      const step = clamp(STEP * (0.6 + panic), 10, MAX_STEP);
+
 
       // Proposed new position in local transform space
       let nextX = curX + dx * step;
@@ -118,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       curX = nextX;
       curY = nextY;
 
-      leaveBtn.style.transform = `translate(${curX}px, ${curY}px)`;
+      leaveBtn.style.transform = `translate(calc(-50% + ${curX}px), ${curY}px)`;
     }
 
     // More accurate than mouseenter: respond as the mouse approaches
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.style.height = dot.style.width;
       dot.style.borderRadius = "50%";
       
-      // Randomly pick a color from our romantic palette
+      // Randomly pick a color from our palette
       dot.style.background = colors[Math.floor(Math.random() * colors.length)];
       
       dot.style.zIndex = "9999";

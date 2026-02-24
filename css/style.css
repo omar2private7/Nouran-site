@@ -286,7 +286,10 @@ body {
 }
 
 /* RUNAWAY BUTTON */
-.interactive-zone { position: relative; } /* Confines the runaway button */
+.interactive-zone { 
+    position: relative;
+    z-index: 50;
+} /* Confines the runaway button */
 
 .leaveBtn {
     position: absolute;
@@ -314,7 +317,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 9998;
 }
 .hidden { display: none !important; }
 
