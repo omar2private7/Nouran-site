@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Nouran! 🎂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <main class="container">
+        <header class="hero">
+            
+            <div class="hero-side">
+                <img class="hero-img float-slow" src="assets/cake.png" alt="Birthday Cake" />
+            </div>
+
+            <div class="hero-center">
+                <h1 class="hero-title">The Big 20 is Coming!</h1>
+                <p class="subtitle">Making every second count...</p>
+
+                <div class="glass-panel countdown-strip">
+                    <div class="slot">
+                        <div class="big" id="days">0</div>
+                        <div class="cap">DAYS</div>
+                    </div>
+                    <div class="slot">
+                        <div class="big" id="hours">0</div>
+                        <div class="cap">HOURS</div>
+                    </div>
+                    <div class="slot">
+                        <div class="big" id="minutes">0</div>
+                        <div class="cap">MINS</div>
+                    </div>
+                    <div class="slot">
+                        <div class="big hot" id="seconds">0</div>
+                        <div class="cap">SECS</div>
+                    </div>
+                </div>
+
+                <p class="tiny-note" id="targetText"></p>
+                
+                <div id="goMessage" class="goMessage hidden">
+                    <span>Unlock your message</span>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
+
+            <div class="hero-side">
+                <img class="hero-img float-fast" src="assets/gifts.png" alt="Gifts" />
+            </div>
+        </header>
+
+        <section class="mixSection">
+            <h2 class="handwritten-title">While we wait... <br>wanna have a mix?</h2>
+            
+            <div class="polaroid-table">
+                <div class="polaroid rotate-left">
+                    <div class="tape"></div>
+                    <div class="photo-frame">
+                        <img src="assets/mixRight.jpeg" alt="The Mix Duo">
+                    </div>
+                    <div class="caption">The Mix Duo</div>
+                </div>
+
+                <div class="polaroid rotate-right interactive-zone">
+                    <div class="tape"></div>
+                    <div id="mixPolaroid" class="flipCard">
+                        <div class="flipInner">
+                            <div class="flipFace flipFront">
+                                <div class="tap-text">
+                                    <span>Tap</span>
+                                    <span>to</span>
+                                    <span>Join</span>
+                                    <span>👆</span>
+                                </div>
+                            </div>
+                            <div class="flipFace flipBack">
+                                <img src="assets/mixLeft.jpeg" alt="Mix photo">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="mixRightCaption" class="caption hidden-caption">yayyy!!</div>
+                    
+                    <button id="leaveBtn" class="leaveBtn hidden">Leave me😢</button>
+                </div>
+            </div>
+        </section>
+
+        <button id="tinyStar" class="tiny-star" aria-label="Hidden star">⭐</button>
+        
+        <div class="footer-hint">
+            <p><strong>Psst...</strong> there are 3 secrets hidden on this website 😉</p>
+        </div>
+
+    </main>
+
+    <div id="modalBackdrop" class="backdrop hidden">
+        <div class="modal">
+            <h3 id="modalTitle">Secret Unlocked!</h3>
+            <p id="modalText">...</p>
+            <button id="closeModal" class="btn-close">Close</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

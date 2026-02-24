@@ -1,0 +1,336 @@
+* { box-sizing: border-box; }
+
+:root {
+  --text-color: #5a2e38;
+  --ink: rgba(0,0,0,0.75);
+}
+
+body.memoriesPage {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Back Button */
+.backBtn {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #5a2e38;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* ============ ROMANTIC TITLE ============ */
+.memoryTitle {
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+.memoryTitle h1 {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: clamp(32px, 6vw, 58px);
+  font-weight: 700;
+  color: #d94b75;
+  margin: 0 auto;
+  display: inline-block;
+  transform: rotate(-2deg);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-shadow:
+    0 2px 12px rgba(217, 75, 117, 0.18),
+    0 1px 0 rgba(255,255,255,0.6);
+  /* Soft glow feel */
+  filter: drop-shadow(0 2px 8px rgba(217, 75, 117, 0.15));
+}
+
+/* The Glassmorphism Board */
+.board {
+  position: relative;
+  width: min(980px, 96vw);
+  margin: 24px auto 80px;
+  height: 3200px; /* Increased from 1550px to fit 20 cards */
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* ============ POLAROID CARD STYLE ============ */
+.card {
+  position: absolute;
+  background: #fffcfd;
+  border-radius: 4px;
+  padding: 12px 12px 0 12px;
+  box-shadow: 
+    0 15px 35px rgba(168, 102, 115, 0.15), 
+    0 5px 15px rgba(0,0,0,0.05);
+  transform-origin: center;
+  z-index: 1;
+  transition: z-index 0.3s, transform 0.3s ease;
+}
+
+.card:hover {
+  z-index: 10;
+}
+
+/* Semi-transparent Washi Tape effect */
+.card::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 90px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+}
+
+.photo {
+  width: 100%;
+  height: calc(100% - 60px); 
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(0.95) sepia(0.1); 
+}
+
+.capLine { display: none; }
+
+/* Handwritten Romantic Caption */
+.caption {
+  font-size: 24px;
+  font-family: 'Caveat', cursive, sans-serif;
+  color: var(--text-color);
+  text-align: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* SIZES */
+.card { width: 230px; height: 280px; }
+.card.tall { height: 340px; }
+.card.wide { width: 420px; height: 280px; }
+
+/* ============ ORIGINAL POSITIONS & ROTATIONS (1–9) ============ */
+.c1 { left: 330px; top: 0px;    --rot: -3deg; }
+.c2 { left: 0px;   top: 160px;  --rot: 4deg; }
+.c3 { left: 700px; top: 210px;  --rot: -2deg; }
+.c4 { left: 360px; top: 330px;  --rot: 2deg; }
+.c5 { left: 30px;  top: 530px;  --rot: -4deg; }
+.c6 { left: 400px; top: 630px; width: 390px; --rot: 1deg; }
+.c7 { left: 170px;  top: 920px;  --rot: 3deg; }
+.c8 { left: 630px; top: 915px;  --rot: -2deg; }
+.c9 { left: 280px; top: 1250px; --rot: 2deg; }
+
+/* ============ NEW POSITIONS & ROTATIONS (10–20) ============ */
+.c10 { left: 30px;  top: 1310px; --rot: -3deg; }
+.c11 { left: 730px; top: 1380px; --rot: 4deg; }
+.c12 { left: 320px; top: 1600px; --rot: -2deg; }
+.c13 { left: 30px;  top: 1900px; --rot: 1deg; } /* wide */
+.c14 { left: 710px; top: 1750px; --rot: -4deg; }
+.c15 { left: 480px; top: 2000px; --rot: 3deg; } /* tall */
+.c16 { left: 40px;  top: 2200px; --rot: -2deg; }
+.c17 { left: 720px; top: 2200px; --rot: 2deg; }
+.c18 { left: 300px; top: 2500px; --rot: -1deg; } /* wide */
+.c19 { left: 740px; top: 2650px; --rot: -3deg; }
+.c20 { left: 40px;  top: 2650px; --rot: 2deg; } /* tall */
+
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95) rotate(0deg);
+  transition: 
+    opacity 800ms cubic-bezier(.2,.8,.2,1),
+    transform 800ms cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(var(--rot));
+}
+
+/* Float effect on hover */
+.reveal.in-view:hover {
+  transform: translateY(-10px) scale(1.02) rotate(var(--rot));
+  box-shadow: 0 25px 45px rgba(168, 102, 115, 0.25);
+}
+
+/* ============================= */
+/* Easter egg & Modal            */
+/* ============================= */
+
+.memoryEgg {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 24px;
+  opacity: 0.2;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.memoryEgg:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
+}
+
+.hidden { display: none !important; }
+
+.memEggBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.memEggModal {
+  width: min(520px, 92vw);
+  background: #fffcfd;
+  border: 1px solid rgba(238, 156, 167, 0.4);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 24px 70px rgba(168, 102, 115, 0.2);
+  text-align: center;
+  color: var(--text-color);
+}
+
+.memEggModal h3 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+}
+
+.memEggModal p {
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  font-size: 18px;
+  white-space: pre-wrap;
+}
+
+.memEggClose {
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  background: #d94b75;
+  box-shadow: 0 4px 15px rgba(217, 75, 117, 0.3);
+  transition: all 0.3s;
+}
+
+.memEggClose:hover {
+  background: #b5385d;
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* Decorative Flowers            */
+/* ============================= */
+
+.cornerFlower, .cornerFlowerTop, .cornerCute {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1; 
+  opacity: 0.8;
+}
+
+.cornerFlower {
+  left: -20px;
+  bottom: -20px;
+  width: 300px;
+  max-width: 45vw;
+}
+
+.cornerFlowerTop {
+  right: -20px;
+  top: -20px;
+  width: 280px;
+  max-width: 40vw;
+}
+
+.cornerCute {
+  left: 20px;
+  top: 20px;
+  width: 180px;
+  max-width: 25vw;
+}
+
+/* ============================= */
+/* Responsive                    */
+/* ============================= */
+@media (max-width: 700px) {
+  .memoryTitle h1 {
+    font-size: 28px;
+    transform: rotate(-1deg);
+  }
+
+  .board {
+    height: auto;
+    padding: 18px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+  .card {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: 360px;
+    margin: 24px 0;
+    --rot: 0deg !important;
+  }
+  .card.wide { height: 360px; }
+  .card.tall { height: 360px; }
+  .reveal.in-view:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}

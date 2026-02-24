@@ -1,0 +1,410 @@
+/* GLOBAL RESET & FONTS */
+:root {
+    --primary: #5a2e38;      /* Deep romantic brown/red */
+    --accent: #d94b75;       /* The pink from memories page */
+    --glass: rgba(255, 255, 255, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --shadow: 0 15px 35px rgba(90, 46, 56, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Fredoka', sans-serif;
+    color: var(--primary);
+    /* The Romantic Gradient */
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #ffdde1, #ee9ca7, #fbc2eb, #fcd6e0);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HERO SECTION */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 600px) 1fr;
+    align-items: center;
+    width: 100%;
+    min-height: 60vh;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(40px, 5vw, 70px);
+    margin: 0;
+    font-family: 'Baloo 2', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 0px rgba(217, 75, 117, 0.5);
+}
+
+.subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    margin: -10px 0 25px;
+    opacity: 0.9;
+}
+
+/* GLASS COUNTDOWN PANEL */
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.big {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.big.hot { color: #841069; }
+
+.cap {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+/* FLOATING IMAGES */
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+.float-slow { animation: float 6s ease-in-out infinite; width: 280px; }
+.float-fast { animation: float 5s ease-in-out infinite reverse; width: 300px; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* MIX SECTION (POLAROIDS) */
+.mixSection {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.handwritten-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 40px;
+    transform: rotate(-2deg);
+}
+
+.polaroid-table {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* POLAROID STYLING */
+.polaroid {
+    background: #fff;
+    padding: 12px 12px 40px 12px; /* Bottom padding for caption space */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    position: relative;
+    width: 260px;
+    transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+    z-index: 10;
+    transform: scale(1.05) rotate(0deg) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* TAPE EFFECT */
+.tape {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    width: 100px;
+    height: 30px;
+    background: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.6);
+    transform: translateX(-50%) rotate(-3deg);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    left: 0;
+    color: #555;
+}
+
+.rotate-left { transform: rotate(-4deg); }
+.rotate-right { transform: rotate(3deg); }
+
+/* FLIP CARD LOGIC */
+.flipCard {
+    position: relative; /* Fixed missing relative positioning */
+    width: 100%;
+    height: 220px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    perspective: 1000px;
+    cursor: pointer;
+    display: block;
+}
+
+.flipInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d; /* Safari Fix */
+}
+
+.flipCard.is-flipped .flipInner { 
+    transform: rotateY(180deg); 
+    -webkit-transform: rotateY(180deg);
+}
+
+.flipFace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari Fix */
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flipFront {
+    background: #ffffff; 
+    color: var(--accent);
+}
+
+.tap-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+    border: 2px dashed var(--accent);
+    padding: 16px 20px;
+    border-radius: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    line-height: 1.1;
+    transition: all 0.3s ease;
+}
+
+.flipCard:hover .tap-text {
+    transform: scale(1.05);
+    background: rgba(217, 75, 117, 0.05);
+}
+
+.flipBack { 
+    transform: rotateY(180deg); 
+    -webkit-transform: rotateY(180deg);
+}
+
+.flipBack img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Initial hidden state for the reveal caption */
+.hidden-caption {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    /* Slight delay so it appears just as the flip finishes */
+    transition-delay: 0.2s; 
+}
+
+/* The class added by JS to trigger the fade in */
+.show-caption {
+    opacity: 1;
+}
+
+/* RUNAWAY BUTTON */
+.interactive-zone { position: relative; } /* Confines the runaway button */
+
+.leaveBtn {
+    position: absolute;
+    bottom: -60px; /* Starts below the polaroid */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    z-index: 100;
+    white-space: nowrap;
+}
+
+/* MODAL */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.hidden { display: none !important; }
+
+.modal {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 90vw;
+    width: 400px;
+    border: 2px solid #ffecec;
+}
+
+.modal h3 { color: var(--accent); margin-top: 0; }
+.btn-close {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* TINY STAR */
+.tiny-star {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tiny-star:hover { opacity: 1; transform: scale(1.2) rotate(15deg); }
+
+/* FOOTER HINT */
+.footer-hint {
+    margin-top: 40px;
+    font-size: 14px;
+    color: var(--primary);
+    opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; gap: 30px; }
+    .hero-side { order: -1; } /* Puts images on top */
+    .hero-img { width: 180px; }
+    .countdown-strip { padding: 15px 10px; }
+    .big { font-size: 36px; }
+    .polaroid-table { gap: 30px; }
+}
+
+/* Transition out */
+.page-exit {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
+}
+
+/* Go Message Link */
+.goMessage {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.goMessage:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+@keyframes shakeAnim {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shakeAnim 250ms ease;
+}

@@ -1,0 +1,256 @@
+:root {
+    --primary: #5a2e38;
+    --accent: #d94b75;
+}
+
+* { box-sizing: border-box; }
+
+body.cakePage {
+    margin: 0;
+    min-height: 100vh;
+    
+    /* REMOVED the busy background image! */
+    /* Added the beautiful cohesive gradient from the other pages */
+    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Fredoka", system-ui, sans-serif;
+}
+
+/* A soft, magical spotlight directly behind the cake */
+.ambient-glow {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 60%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Twinkling background stars */
+.ambient-sparkles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0;
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+/* ============================= */
+/* Buttons (Matched to theme)    */
+/* ============================= */
+
+.backBtn, .memoriesBtn {
+    position: fixed;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.backBtn {
+    left: 20px;
+    bottom: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--primary);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.backBtn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.memoriesBtn {
+    right: 20px;
+    bottom: 20px;
+    background: var(--accent);
+    color: #ffffff;
+    border: 2px solid #ff9a9e;
+}
+
+.memoriesBtn:hover {
+    background: #b5385d;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(217, 75, 117, 0.4);
+}
+
+/* ============================= */
+/* The Cake                      */
+/* ============================= */
+
+.customCake {
+    position: absolute;
+    width: 490px;
+    max-width: 80vw;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    user-select: none;
+    pointer-events: none;
+    z-index: 2;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+/* Continuous floating animation for the cake */
+.cakePage.show-cake .customCake {
+    animation: floatCake 4s ease-in-out infinite;
+}
+
+@keyframes floatCake {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, calc(-50% - 15px)); }
+}
+
+/* ============================= */
+/* Side Meme Stickers            */
+/* ============================= */
+
+.sideImg {
+    position: absolute;
+    width: 240px;
+    max-width: 30vw;
+    height: auto;
+    top: 60%;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    
+    /* Give them a cute "die-cut sticker" or polaroid frame */
+    border: 8px solid #ffffff;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 15px 35px rgba(90, 46, 56, 0.15);
+}
+
+.leftImg { left: 12%; }
+.rightImg { right: 12%; }
+
+/* Continuous floating animation for stickers */
+.cakePage.show-sides .leftImg { animation: floatLeft 5s ease-in-out infinite; }
+.cakePage.show-sides .rightImg { animation: floatRight 4.5s ease-in-out infinite reverse; }
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(-50%) rotate(-6deg); }
+    50% { transform: translateY(calc(-50% - 10px)) rotate(-2deg); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(-50%) rotate(5deg); }
+    50% { transform: translateY(calc(-50% - 12px)) rotate(1deg); }
+}
+
+/* ============================= */
+/* Easter egg & Modal            */
+/* ============================= */
+
+.cakeEgg {
+    position: absolute;
+    left: 50%;
+    top: 21%;
+    transform: translate(-50%, -50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9998;
+    animation: eggPulse 2s ease-in-out infinite;
+}
+
+@keyframes eggPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); filter: drop-shadow(0 0 5px rgba(255,215,0,0.5)); }
+    50% { transform: translate(-50%, -50%) scale(1.15); filter: drop-shadow(0 0 15px rgba(255,215,0,0.9)); }
+}
+
+.hidden { display: none !important; }
+
+.eggBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.eggModal {
+    width: min(520px, 92vw);
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 24px 70px rgba(168, 102, 115, 0.2);
+    text-align: center;
+    color: var(--primary);
+}
+
+.eggModal h3 {
+    margin: 0 0 12px 0;
+    font-size: 26px;
+    font-family: 'Baloo 2', system-ui, sans-serif;
+    color: var(--accent);
+}
+
+.eggModal p {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.eggClose {
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: 0 4px 15px rgba(217, 75, 117, 0.3);
+    transition: all 0.3s;
+}
+
+.eggClose:hover {
+    background: #b5385d;
+    transform: translateY(-2px);
+}
+
+/* ===== Staged entrance animations ===== */
+.cakePage .sideImg, .cakePage .customCake {
+    opacity: 0;
+    transition: opacity 800ms ease, transform 800ms cubic-bezier(.2,.8,.2,1);
+}
+
+.cakePage .customCake { transform: translate(-50%, -50%) translateY(30px) scale(0.95); }
+.cakePage .sideImg { transform: translateY(calc(-50% + 30px)) scale(0.95); }
+
+/* Animation starts applying via JS, then keyframes take over */
+.cakePage.show-sides .leftImg { opacity: 1; transform: translateY(-50%) rotate(-6deg); }
+.cakePage.show-sides .rightImg { opacity: 1; transform: translateY(-50%) rotate(5deg); }
+.cakePage.show-cake .customCake { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
