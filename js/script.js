@@ -1,6 +1,6 @@
 // ====== Customize these ======
-const PERSON_NAME = "YourName";  // <-- change
-const TARGET_DATE_ISO = "2026-02-27T17:56:00"; // <-- change
+const PERSON_NAME = "Nouran";  
+const TARGET_DATE_ISO = "2026-02-27T00:00:00"; 
 
 const SECRET_STAR_MESSAGE = `You deserve this ya best doctor ever! 💗
 There’s also a very secret Easter egg made of 3 letters… the first one is “b” 👀  
