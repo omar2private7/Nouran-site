@@ -7,8 +7,8 @@ There’s also a very secret Easter egg made of 3 letters… the first one is �
 I’ll be dropping hints throughout the website 😉`;
 
 const SECRET_KONAMI_MESSAGE = "You did it!!! 🥳🥳🥳\n\nkeda 5alasty kol el easter egggsss!!! aw m4 kolo👀 fe lesa wa7da \
-httgab lw 8ayarty el url ely fo2 le 7aga keda mo3ayana👀 bas 34an hya m3mola enk mt3rfeha4 fana ktbt feha gomla wa7da bas u can guess it\
-bas👀\n\n3al 3omom 7abeb 2a2olk en you deserve the best ya nouran bzat fe 3ed meladk 34an keda 7abet 23mlk el website da w inshallah\
+httgab lw 8ayarty el url ely fo2 le 7aga keda mo3ayana👀 bas 34an hya m3mola enk mt3rfeha4 fana ktbt feha gomla wa7da bas u can guess it \
+bas👀\n\n3al 3omom 7abeb 2a2olk en you deserve the best ya nouran bzat fe 3ed meladk 34an keda 7abet 23mlk el website da w inshallah \
 tkony enbasatyy beeh da hayfr7ny awyy w b keda enty 5lsty el website da bas keda keda ely gy 27san inshallah!!!";
 
 const REDIRECT_URL = "message.html";       // 👈 new page
