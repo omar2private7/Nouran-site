@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const EGG_TITLE = "Oooooo an Easter Eggg 😭💗";
   const EGG_MESSAGE =
-    'La2ety el talet wel 2a5er!! 😂\nHena 7arf tany… "o" 👀 zmank asln konty 3arfa el kelma men badry... bas aked m4 3rfa tst5demeha ezay👀 2rga3y lel counter page w 2ktby 3al keyboard el 3 7orof 34an ytl3lk el secret message!!!';
+    'La2ety el talta wel 2a5eraa!! 😂\nHena 7arf tany… "o" 👀 zmank asln konty 3arfa el kelma men badry... bas aked m4 3rfa tst5demeha ezay👀 2rga3y lel countdown page w 2ktby 3al keyboard el 3 7orof 34an ytl3lk el secret message!!!';
 
   function burstConfetti() {
     for (let i = 0; i < 55; i++) {
