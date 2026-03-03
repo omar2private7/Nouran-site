@@ -292,7 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (location.hash.toLowerCase() === "#surprise") {
-    openModal("What! you found it 😲", "Because u won't find it i will say it: I love you sooo so much ya Nouran❤️❤️!!");
+    openModal(
+      "What! you found it 😲", 
+      "Because u won't find it i will say it:\nMHIYPDEGIBTM ya Nouran❤️!!");
   }
   if (goMessage) {
     goMessage.addEventListener("click", () => {
@@ -304,6 +306,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 520); // must match CSS duration
     });
   }
-
-
 });
