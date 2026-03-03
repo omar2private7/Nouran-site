@@ -8,6 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
   <title>Memories ❤️</title>
   <link rel="stylesheet" href="css/memories.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDG1T2R1D5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SDG1T2R1D5');
+  </script>
 </head>
 
 <body class="memoriesPage">
@@ -20,7 +28,6 @@
 
   <main class="board" aria-label="Memories board">
 
-    <!-- ===== ORIGINAL 9 CARDS (unchanged) ===== -->
     <article class="card c1 reveal">
       <div class="photo">
         <img src="assets/memory1.png" alt="Memory 1">
@@ -85,7 +92,6 @@
       <div class="caption" contenteditable="true">B3d mo3ana the heads are defeated!!!</div>
     </article>
 
-    <!-- BIG BOTTOM-RIGHT -->
     <article class="card c9 wide reveal">
       <div class="photo">
         <img src="assets/memory9.jpeg" alt="Memory 9">
@@ -94,7 +100,6 @@
       <div class="caption" contenteditable="true">Fareek el ka4afaa yastak4efon al gebaaaal</div>
     </article>
 
-    <!-- ===== NEW CARDS 10–20 ===== -->
     <article class="card c10 reveal">
       <div class="photo">
         <img src="assets/memory10.jpeg" alt="Memory 10">
@@ -187,6 +192,14 @@
     <button class="memoryEgg" id="memoryEgg" aria-label="Hidden memory secret">🌸</button>
 
   </main>
+
+  <!-- Bonuses CTA -->
+  <div class="bonus-cta" aria-label="Bonuses link">
+    <a class="bonus-btn" id="bonusBtn" href="bonuses.html">
+      <span class="bonus-btn__shine" aria-hidden="true"></span>
+      <span class="bonus-btn__text">Bonuses ✨</span>
+    </a>
+  </div>
 
   <script src="js/memories.js"></script>
 
