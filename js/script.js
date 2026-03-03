@@ -292,9 +292,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (location.hash.toLowerCase() === "#surprise") {
+    gtag('event', 'surprise_unlocked');
+    
     openModal(
-      "What! you found it 😲", 
-      "Because u won't find it i will say it:\nMHIYPDEGIBTM ya Nouran❤️!!");
+      "What! you found it 😲",
+      "Because u won't find it i will say it:\nMHIYPDEGIBTM ya Nouran❤️!!"
+    );
   }
   if (goMessage) {
     goMessage.addEventListener("click", () => {
