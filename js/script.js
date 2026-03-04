@@ -13,6 +13,26 @@ tkony enbasatyy beeh da hayfr7ny awyy w b keda enty 5lsty el website da bas keda
 
 const REDIRECT_URL = "message.html";       // 👈 new page
 
+
+// Create a persistent visitor id
+function getVisitorId() {
+  let id = localStorage.getItem("visitor_id");
+
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("visitor_id", id);
+  }
+
+  return id;
+}
+
+const VISITOR_ID = getVisitorId();
+
+function sendEvent(name, params = {}) {
+  if (typeof gtag !== "function") return; // avoid errors if GA not loaded
+  gtag("event", name, { visitor_id: VISITOR_ID, ...params });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const elName = document.getElementById("name");
   const elTargetText = document.getElementById("targetText");
@@ -26,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const leaveBtn = document.getElementById("leaveBtn");
   // 👇 Select the new caption element
   const mixCaption = document.getElementById("mixRightCaption");
+
+  sendEvent("index_opened");
 
   if (mixPolaroid) {
     mixPolaroid.addEventListener("click", () => {
@@ -292,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (location.hash.toLowerCase() === "#surprise") {
-    gtag('event', 'surprise_unlocked');
+    sendEvent("nouran_surprise");
     
     openModal(
       "What! you found it 😲",
