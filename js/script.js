@@ -314,13 +314,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (location.hash.toLowerCase() === "#surprise") {
-    sendEvent("nouran_surprise");
-    
+    const firedAt = new Date();
+
+    sendEvent("nouran_surprise", {
+      fired_at_iso: firedAt.toISOString(), 
+      fired_date: firedAt.toISOString().slice(0, 10), 
+      fired_hour_utc: firedAt.getUTCHours() 
+    });
+
     openModal(
       "What! you found it 😲",
       "Because u won't find it i will say it:\nMHIYPDEGIBTM ya Nouran❤️!!"
     );
   }
+
   if (goMessage) {
     goMessage.addEventListener("click", () => {
       document.body.classList.add("page-exit");
