@@ -319,7 +319,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sendEvent("nouran_surprise", {
       fired_at_iso: firedAt.toISOString(), // exact time in UTC
       fired_local_date: `${firedAt.getFullYear()}-${String(firedAt.getMonth() + 1).padStart(2, "0")}-${String(firedAt.getDate()).padStart(2, "0")}`,
-      fired_local_hour: firedAt.getHours()
+      fired_local_hour: firedAt.getHours(),
+      fired_local_minute: String(firedAt.getMinutes()).padStart(2, "0")
     });
 
     openModal(
