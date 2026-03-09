@@ -315,11 +315,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (location.hash.toLowerCase() === "#surprise") {
     const firedAt = new Date();
+    const firedAtIso = firedAt.toISOString();
 
     sendEvent("nouran_surprise", {
-      fired_at_iso: firedAt.toISOString(), 
-      fired_date: firedAt.toISOString().slice(0, 10), 
-      fired_hour_utc: firedAt.getUTCHours() 
+      fired_at_iso: firedAtIso,
+      fired_date: firedAtIso.slice(0, 10),
+      fired_hour_utc: firedAt.getUTCHours()
     });
 
     openModal(
