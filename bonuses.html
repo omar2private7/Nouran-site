@@ -17,6 +17,7 @@
     />
     <title>Bonuses ✨</title>
     <link rel="stylesheet" href="css/bonuses.css?v=3" />
+    <link rel="stylesheet" href="css/menu.css" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-SDG1T2R1D5"
@@ -33,6 +34,61 @@
   </head>
 
   <body class="bonusesPage">
+    <nav class="site-menu" aria-label="Website pages">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="menuPanel"
+      >
+        <span class="menu-toggle__bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <div class="menu-backdrop"></div>
+
+      <aside class="menu-panel" id="menuPanel">
+        <h2 class="menu-title">Pages ✨</h2>
+        <p class="menu-subtitle">Pick any page you want ❤️</p>
+
+        <ul class="menu-list">
+          <li>
+            <a href="index.html">
+              <span class="menu-link-title">Countdown page</span>
+              <span class="menu-link-desc">index.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="message.html">
+              <span class="menu-link-title">Message page</span>
+              <span class="menu-link-desc">message.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="cake.html">
+              <span class="menu-link-title">Cake page</span>
+              <span class="menu-link-desc">cake.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="memories.html">
+              <span class="menu-link-title">Memories page</span>
+              <span class="menu-link-desc">memories.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="bonuses.html">
+              <span class="menu-link-title">Bonus photos</span>
+              <span class="menu-link-desc">bonuses.html</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </nav>
     <a href="memories.html" class="backBtn">← Back</a>
 
     <div class="bonusTitle">
@@ -227,6 +283,7 @@
     />
     <img src="assets/cute.png" alt="Cute decoration" class="cornerCute" />
 
+    <script src="js/menu.js"></script>
     <script src="js/bonuses.js"></script>
   </body>
 </html>

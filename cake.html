@@ -1,52 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Cake 🎂</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/cake.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDG1T2R1D5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600&family=Baloo+2:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-        gtag('config', 'G-SDG1T2R1D5');
+    <link rel="stylesheet" href="css/cake.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SDG1T2R1D5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-SDG1T2R1D5');
     </script>
-</head>
-<body class="cakePage">
+  </head>
+  <body class="cakePage">
+    <nav class="site-menu" aria-label="Website pages">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="menuPanel"
+      >
+        <span class="menu-toggle__bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <div class="menu-backdrop"></div>
+
+      <aside class="menu-panel" id="menuPanel">
+        <h2 class="menu-title">Pages ✨</h2>
+        <p class="menu-subtitle">Pick any page you want ❤️</p>
+
+        <ul class="menu-list">
+          <li>
+            <a href="index.html">
+              <span class="menu-link-title">Countdown page</span>
+              <span class="menu-link-desc">index.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="message.html">
+              <span class="menu-link-title">Message page</span>
+              <span class="menu-link-desc">message.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="cake.html">
+              <span class="menu-link-title">Cake page</span>
+              <span class="menu-link-desc">cake.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="memories.html">
+              <span class="menu-link-title">Memories page</span>
+              <span class="menu-link-desc">memories.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="bonuses.html">
+              <span class="menu-link-title">Bonus photos</span>
+              <span class="menu-link-desc">bonuses.html</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </nav>
     <div class="ambient-glow"></div>
     <div class="ambient-sparkles">
-        <span class="sparkle" style="top: 15%; left: 20%; animation-delay: 0s;">✨</span>
-        <span class="sparkle" style="top: 30%; right: 15%; animation-delay: 1s;">✨</span>
-        <span class="sparkle" style="top: 75%; left: 10%; animation-delay: 2s;">✨</span>
-        <span class="sparkle" style="top: 65%; right: 25%; animation-delay: 0.5s;">✨</span>
+      <span class="sparkle" style="top: 15%; left: 20%; animation-delay: 0s"
+        >✨</span
+      >
+      <span class="sparkle" style="top: 30%; right: 15%; animation-delay: 1s"
+        >✨</span
+      >
+      <span class="sparkle" style="top: 75%; left: 10%; animation-delay: 2s"
+        >✨</span
+      >
+      <span class="sparkle" style="top: 65%; right: 25%; animation-delay: 0.5s"
+        >✨</span
+      >
     </div>
 
     <a href="message.html" class="backBtn">← Back to message</a>
-    
-    <img src="assets/customCake.png" alt="Custom Cake" class="customCake">
+
+    <img src="assets/customCake.png" alt="Custom Cake" class="customCake" />
 
     <button class="cakeEgg" id="cakeEgg" aria-label="Secret candle">✨</button>
 
-    <img src="assets/7aywanAbyad.png" alt="Left decoration" class="sideImg leftImg">
-    <img src="assets/ka2enAbyad.jpeg" alt="Right decoration" class="sideImg rightImg">
+    <img
+      src="assets/7aywanAbyad.png"
+      alt="Left decoration"
+      class="sideImg leftImg"
+    />
+    <img
+      src="assets/ka2enAbyad.jpeg"
+      alt="Right decoration"
+      class="sideImg rightImg"
+    />
 
-    <div id="eggBackdrop" class="eggBackdrop hidden" role="dialog" aria-modal="true">
-        <div class="eggModal">
-            <h3 id="eggTitle">Secret unlocked 🎁</h3>
-            <p id="eggText">You found the cake secret!</p>
-            <button id="eggClose" class="eggClose" type="button">Close</button>
-        </div>
+    <div
+      id="eggBackdrop"
+      class="eggBackdrop hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="eggModal">
+        <h3 id="eggTitle">Secret unlocked 🎁</h3>
+        <p id="eggText">You found the cake secret!</p>
+        <button id="eggClose" class="eggClose" type="button">Close</button>
+      </div>
     </div>
 
     <a href="memories.html" class="memoriesBtn">📸 Memories</a>
-    
+
+    <script src="js/menu.js"></script>
     <script src="js/cake.js"></script>
-</body>
+  </body>
 </html>

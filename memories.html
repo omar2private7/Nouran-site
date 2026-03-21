@@ -1,220 +1,341 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-  <title>Memories ❤️</title>
-  <link rel="stylesheet" href="css/memories.css" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDG1T2R1D5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Memories ❤️</title>
+    <link rel="stylesheet" href="css/memories.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SDG1T2R1D5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-    gtag('config', 'G-SDG1T2R1D5');
-  </script>
-</head>
+      gtag('config', 'G-SDG1T2R1D5');
+    </script>
+  </head>
 
-<body class="memoriesPage">
-  <a href="cake.html" class="backBtn">← Back</a>
+  <body class="memoriesPage">
+    <nav class="site-menu" aria-label="Website pages">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="menuPanel"
+      >
+        <span class="menu-toggle__bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
 
-  <!-- Handwritten romantic title -->
-  <div class="memoryTitle">
-    <h1>20 Memories for Your 20th Birthday 💗</h1>
-  </div>
+      <div class="menu-backdrop"></div>
 
-  <main class="board" aria-label="Memories board">
+      <aside class="menu-panel" id="menuPanel">
+        <h2 class="menu-title">Pages ✨</h2>
+        <p class="menu-subtitle">Pick any page you want ❤️</p>
 
-    <article class="card c1 reveal">
-      <div class="photo">
-        <img src="assets/memory1.png" alt="Memory 1">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">Best selfie daa🌚</div>
-    </article>
+        <ul class="menu-list">
+          <li>
+            <a href="index.html">
+              <span class="menu-link-title">Countdown page</span>
+              <span class="menu-link-desc">index.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="message.html">
+              <span class="menu-link-title">Message page</span>
+              <span class="menu-link-desc">message.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="cake.html">
+              <span class="menu-link-title">Cake page</span>
+              <span class="menu-link-desc">cake.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="memories.html">
+              <span class="menu-link-title">Memories page</span>
+              <span class="menu-link-desc">memories.html</span>
+            </a>
+          </li>
+          <li>
+            <a href="bonuses.html">
+              <span class="menu-link-title">Bonus photos</span>
+              <span class="menu-link-desc">bonuses.html</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </nav>
+    <a href="cake.html" class="backBtn">← Back</a>
 
-    <article class="card c2 reveal">
+    <!-- Handwritten romantic title -->
+    <div class="memoryTitle">
+      <h1>20 Memories for Your 20th Birthday 💗</h1>
+    </div>
+
+    <main class="board" aria-label="Memories board">
+      <article class="card c1 reveal">
         <div class="photo">
-            <img src="assets/memory2.png" alt="Memory 2">
+          <img src="assets/memory1.png" alt="Memory 1" />
         </div>
         <div class="capLine"></div>
-        <div class="caption" contenteditable="true">27na w 27na mestanyn amira😂</div>
-    </article>
+        <div class="caption" contenteditable="true">Best selfie daa🌚</div>
+      </article>
 
-    <article class="card c3 tall reveal">
-      <div class="photo">
-            <img src="assets/memory3.jpeg" alt="Memory 3">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true"> m4 hatkalem hena...</div>
-    </article>
-
-    <article class="card c4 reveal">
+      <article class="card c2 reveal">
         <div class="photo">
-            <img src="assets/memory4.jpeg" alt="Memory 4">
+          <img src="assets/memory2.png" alt="Memory 2" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          27na w 27na mestanyn amira😂
+        </div>
+      </article>
+
+      <article class="card c3 tall reveal">
+        <div class="photo">
+          <img src="assets/memory3.jpeg" alt="Memory 3" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">m4 hatkalem hena...</div>
+      </article>
+
+      <article class="card c4 reveal">
+        <div class="photo">
+          <img src="assets/memory4.jpeg" alt="Memory 4" />
         </div>
         <div class="capLine"></div>
         <div class="caption" contenteditable="true">el ward mvp🌚</div>
-    </article>
+      </article>
 
-    <article class="card c5 reveal">
-      <div class="photo">
-            <img src="assets/memory5.jpeg" alt="Memory 5">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">tab3an lazem ntarya2 3al mobtade2een🙃</div>
-    </article>
+      <article class="card c5 reveal">
+        <div class="photo">
+          <img src="assets/memory5.jpeg" alt="Memory 5" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          tab3an lazem ntarya2 3al mobtade2een🙃
+        </div>
+      </article>
 
-    <article class="card c6 reveal">
-      <div class="photo">
-            <img src="assets/memory6.jpeg" alt="Memory 6">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">The doctor, the CL w the ely 3yza ttgwz bayn</div>
-    </article>
+      <article class="card c6 reveal">
+        <div class="photo">
+          <img src="assets/memory6.jpeg" alt="Memory 6" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          The doctor, the CL w the ely 3yza ttgwz bayn
+        </div>
+      </article>
 
-    <article class="card c7 reveal">
-      <div class="photo">
-            <img src="assets/memory7.jpeg" alt="Memory 7">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">sara2t menk el win bsbb el skena👀</div>
-    </article>
+      <article class="card c7 reveal">
+        <div class="photo">
+          <img src="assets/memory7.jpeg" alt="Memory 7" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          sara2t menk el win bsbb el skena👀
+        </div>
+      </article>
 
-    <article class="card c8 tall reveal">
-      <div class="photo">
-            <img src="assets/memory8.jpeg" alt="Memory 8">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">B3d mo3ana the heads are defeated!!!</div>
-    </article>
+      <article class="card c8 tall reveal">
+        <div class="photo">
+          <img src="assets/memory8.jpeg" alt="Memory 8" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          B3d mo3ana the heads are defeated!!!
+        </div>
+      </article>
 
-    <article class="card c9 wide reveal">
-      <div class="photo">
-        <img src="assets/memory9.jpeg" alt="Memory 9">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">Fareek el ka4afaa yastak4efon al gebaaaal</div>
-    </article>
+      <article class="card c9 wide reveal">
+        <div class="photo">
+          <img src="assets/memory9.jpeg" alt="Memory 9" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          Fareek el ka4afaa yastak4efon al gebaaaal
+        </div>
+      </article>
 
-    <article class="card c10 reveal">
-      <div class="photo">
-        <img src="assets/memory10.jpeg" alt="Memory 10">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">Amira kant 3yza tdrbny bayn 😭</div>
-    </article>
+      <article class="card c10 reveal">
+        <div class="photo">
+          <img src="assets/memory10.jpeg" alt="Memory 10" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          Amira kant 3yza tdrbny bayn 😭
+        </div>
+      </article>
 
-    <article class="card c11 tall reveal">
-      <div class="photo">
-        <img src="assets/memory11.jpeg" alt="Memory 11">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">Lazem 2a7ot el youm da 👀</div>
-    </article>
+      <article class="card c11 tall reveal">
+        <div class="photo">
+          <img src="assets/memory11.jpeg" alt="Memory 11" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          Lazem 2a7ot el youm da 👀
+        </div>
+      </article>
 
-    <article class="card c12 reveal">
-      <div class="photo">
-        <img src="assets/memory12.jpeg" alt="Memory 12">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">24ba7 msa</div>
-    </article>
+      <article class="card c12 reveal">
+        <div class="photo">
+          <img src="assets/memory12.jpeg" alt="Memory 12" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">24ba7 msa</div>
+      </article>
 
-    <article class="card c13 wide reveal">
-      <div class="photo">
-        <img src="assets/memory13.jpeg" alt="Memory 13">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">A memorable day bas m4 el memorable el 3ady iykyk👀</div>
-    </article>
+      <article class="card c13 wide reveal">
+        <div class="photo">
+          <img src="assets/memory13.jpeg" alt="Memory 13" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          A memorable day bas m4 el memorable el 3ady iykyk👀
+        </div>
+      </article>
 
-    <article class="card c14 reveal">
-      <div class="photo">
-        <img src="assets/memory14.jpeg" alt="Memory 14">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">wa7da kaman mel youm da</div>
-    </article>
+      <article class="card c14 reveal">
+        <div class="photo">
+          <img src="assets/memory14.jpeg" alt="Memory 14" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          wa7da kaman mel youm da
+        </div>
+      </article>
 
-    <article class="card c15 tall reveal">
-      <div class="photo">
-        <img src="assets/memory15.jpeg" alt="Memory 15">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">3amlen zy 3saba keda 😂wana faceless msa</div>
-    </article>
+      <article class="card c15 tall reveal">
+        <div class="photo">
+          <img src="assets/memory15.jpeg" alt="Memory 15" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          3amlen zy 3saba keda 😂wana faceless msa
+        </div>
+      </article>
 
-    <article class="card c16 reveal">
-      <div class="photo">
-        <img src="assets/memory16.jpeg" alt="Memory 16">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">Lama kona fel 3en el so5na fe sec2 🌚</div>
-    </article>
+      <article class="card c16 reveal">
+        <div class="photo">
+          <img src="assets/memory16.jpeg" alt="Memory 16" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          Lama kona fel 3en el so5na fe sec2 🌚
+        </div>
+      </article>
 
-    <article class="card c17 reveal">
-      <div class="photo">
-        <img src="assets/memory17.jpeg" alt="Memory 17">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">M3rf4 walahy kont btl3 podium m3ako ezay</div>
-    </article>
+      <article class="card c17 reveal">
+        <div class="photo">
+          <img src="assets/memory17.jpeg" alt="Memory 17" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          M3rf4 walahy kont btl3 podium m3ako ezay
+        </div>
+      </article>
 
-    <article class="card c18 wide reveal">
-      <div class="photo">
-        <img src="assets/memory18.jpeg" alt="Memory 18">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">Eh ya nouran la2ety doda?🌚 wana ba5od 7amam asphalt asasan😂</div>
-    </article>
+      <article class="card c18 wide reveal">
+        <div class="photo">
+          <img src="assets/memory18.jpeg" alt="Memory 18" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          Eh ya nouran la2ety doda?🌚 wana ba5od 7amam asphalt asasan😂
+        </div>
+      </article>
 
-    <article class="card c19 reveal">
-      <div class="photo">
-        <img src="assets/memory19.jpeg" alt="Memory 19">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">bgd this pose is haunting me😭</div>
-    </article>
+      <article class="card c19 reveal">
+        <div class="photo">
+          <img src="assets/memory19.jpeg" alt="Memory 19" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          bgd this pose is haunting me😭
+        </div>
+      </article>
 
-    <article class="card c20 tall reveal">
-      <div class="photo">
-        <img src="assets/memory20.jpeg" alt="Memory 20">
-      </div>
-      <div class="capLine"></div>
-      <div class="caption" contenteditable="true">M3l4 2a5r mara🌚 bgd youm ystahel</div>
-    </article>
+      <article class="card c20 tall reveal">
+        <div class="photo">
+          <img src="assets/memory20.jpeg" alt="Memory 20" />
+        </div>
+        <div class="capLine"></div>
+        <div class="caption" contenteditable="true">
+          M3l4 2a5r mara🌚 bgd youm ystahel
+        </div>
+      </article>
 
-    <!-- Hidden Easter egg -->
-    <button class="memoryEgg" id="memoryEgg" aria-label="Hidden memory secret">🌸</button>
+      <!-- Hidden Easter egg -->
+      <button
+        class="memoryEgg"
+        id="memoryEgg"
+        aria-label="Hidden memory secret"
+      >
+        🌸
+      </button>
+    </main>
 
-  </main>
-
-  <!-- Bonuses CTA -->
-  <div class="bonus-cta" aria-label="Bonuses link">
-    <a class="bonus-btn" id="bonusBtn" href="bonuses.html">
-      <span class="bonus-btn__shine" aria-hidden="true"></span>
-      <span class="bonus-btn__text">Bonuses ✨</span>
-    </a>
-  </div>
-
-  <script src="js/memories.js"></script>
-
-  <!-- Modal (keep OUTSIDE main) -->
-  <div id="memEggBackdrop" class="memEggBackdrop hidden" role="dialog" aria-modal="true">
-    <div class="memEggModal">
-      <h3 id="memEggTitle">Secret unlocked 🎁</h3>
-      <p id="memEggText">You found the memories secret!</p>
-      <button id="memEggClose" class="memEggClose" type="button">Close</button>
+    <!-- Bonuses CTA -->
+    <div class="bonus-cta" aria-label="Bonuses link">
+      <a class="bonus-btn" id="bonusBtn" href="bonuses.html">
+        <span class="bonus-btn__shine" aria-hidden="true"></span>
+        <span class="bonus-btn__text">Bonuses ✨</span>
+      </a>
     </div>
-  </div>
 
-  <img src="assets/flowers1.png" alt="Flowers decoration" class="cornerFlower">
-  <img src="assets/flowers2.png" alt="Top flowers decoration" class="cornerFlowerTop">
-  <img src="assets/cute.png" alt="Cute decoration" class="cornerCute">
+    <script src="js/menu.js"></script>
+    <script src="js/memories.js"></script>
 
-</body>
+    <!-- Modal (keep OUTSIDE main) -->
+    <div
+      id="memEggBackdrop"
+      class="memEggBackdrop hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="memEggModal">
+        <h3 id="memEggTitle">Secret unlocked 🎁</h3>
+        <p id="memEggText">You found the memories secret!</p>
+        <button id="memEggClose" class="memEggClose" type="button">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <img
+      src="assets/flowers1.png"
+      alt="Flowers decoration"
+      class="cornerFlower"
+    />
+    <img
+      src="assets/flowers2.png"
+      alt="Top flowers decoration"
+      class="cornerFlowerTop"
+    />
+    <img src="assets/cute.png" alt="Cute decoration" class="cornerCute" />
+  </body>
 </html>
