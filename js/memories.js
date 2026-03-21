@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const EGG_TITLE = "Oooooo an Easter Eggg 😭💗";
   const EGG_MESSAGE =
-    'La2ety el talta wel 2a5eraa!! 😂\nHena 7arf tany… "o" 👀 zmank asln konty 3arfa el kelma men badry... bas aked m4 3rfa tst5demeha ezay👀 2rga3y lel countdown page w 2ktby 3al keyboard el 3 7orof 34an ytl3lk el secret message!!!';
+    'La2ety el talet wel 2a5er!! 😂\nHena 7arf tany… "o" 👀 zmank asln konty 3arfa el kelma men badry... bas aked m4 3rfa tst5demeha ezay👀 2rga3y lel counter page w 2ktby 3al keyboard el 3 7orof 34an ytl3lk el secret message!!!';
 
   function burstConfetti() {
     for (let i = 0; i < 55; i++) {
@@ -81,4 +81,70 @@ document.addEventListener("DOMContentLoaded", () => {
   backdrop.addEventListener("click", (e) => {
     if (e.target === backdrop) closeEgg();
   });
+});
+
+/* ... [KEEP YOUR EXISTING REVEAL AND EASTER EGG LOGIC UNCHANGED] ... */
+
+// ===== Bonuses magnetic / parallax button =====
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("bonusBtn"); // Updated ID
+  if (!btn) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced) return;
+
+  let raf = null;
+  let lastX = 0;
+  let lastY = 0;
+
+  function update() {
+    raf = null;
+    const r = btn.getBoundingClientRect();
+
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height / 2;
+
+    const dx = (lastX - cx) / r.width;
+    const dy = (lastY - cy) / r.height;
+
+    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+    const x = clamp(dx, -0.6, 0.6);
+    const y = clamp(dy, -0.6, 0.6);
+
+    const tilt = 10;     
+    const lift = 10;     
+
+    const tx = x * lift;
+    const ty = y * lift;
+    const rx = (-y * tilt).toFixed(3);
+    const ry = (x * tilt).toFixed(3);
+
+    const px = ((x + 0.5) * 100).toFixed(2) + "%";
+    const py = ((y + 0.5) * 100).toFixed(2) + "%";
+
+    btn.style.setProperty("--px", px);
+    btn.style.setProperty("--py", py);
+    btn.style.transform = `translate(${tx}px, ${ty}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  }
+
+  function onMove(e) {
+    lastX = e.clientX;
+    lastY = e.clientY;
+    if (raf) return;
+    raf = requestAnimationFrame(update);
+  }
+
+  function reset() {
+    if (raf) {
+      cancelAnimationFrame(raf);
+      raf = null;
+    }
+    btn.style.setProperty("--px", "50%");
+    btn.style.setProperty("--py", "50%");
+    btn.style.transform = "translate(0px, 0px) rotateX(0deg) rotateY(0deg)";
+  }
+
+  btn.addEventListener("pointermove", onMove);
+  btn.addEventListener("pointerleave", reset);
+  btn.addEventListener("pointerdown", onMove);
 });
